@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 
 
+class Text extends Component {
+    render() {
+        this.props.texto
+        return (
+            <div>{texto}</div>
+        );
+    }
+}
+
+//default Props->Inmutable
+Text.defaultProps = {
+    texto: 'text FOREVER'
+}
+
+
 class Vectors extends Component {
     render() {
         const { numbers } = this.props
@@ -9,6 +24,7 @@ class Vectors extends Component {
         return (
             <div>
                 <p>{sumV.join(',')}</p>
+
             </div>
         );
     }
