@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+class Vectors extends Component {
+    render() {
+        const { numbers } = this.props
+        const sumV = numbers.map(n => n * 2)
+        return (
+            <div>
+                <p>{sumV.join(',')}</p>
+            </div>
+        );
+    }
+}
+
+
+
 class App extends Component {
     render() {
         return (
-            <h1>First Message! REACT JS</h1>
+            <div>
+                <h1>First Message! REACT JS</h1>
+                <Vectors
+                    numbers={[2, 4, 5]}
+                />
+            </div>
         );
     }
 }
