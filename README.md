@@ -1,7 +1,3 @@
 #  First-Bootcamp REACT APP •ᴗ•
 
->  Basic concepts on REACTJS 
-
-
-
-
+>  Basic concepts on REACTJS
