@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "./App.css";
 
 class Contador extends Component {
-  constructor() {
-    super();
-    this.state = { contador: 1 };
+  constructor(props) {
+    super(props);
+    console.log(this.props.contadorInicial);
+    this.state = { contador: this.props.contadorInicial };
     setInterval(() => {
       this.setState = { contador: this.state.contador + 1 };
     }, 1000);
@@ -14,8 +15,12 @@ class Contador extends Component {
   }
 }
 
+Contador.defaultProps = {
+  contadorInicial: 0,
+};
 class ContadorNumero extends Component {
   render() {
+    console.log("ContadorNumero render()");
     return <span>{this.props.numero}</span>;
   }
 }
@@ -51,8 +56,7 @@ class App extends Component {
         <h1>First Message! REACT JS</h1>
         <Vectors numbers={[2, 4, 5]} />
         <Text />
-        <Contador />
-        <ContadorNumero />
+        <Contador contadorInicial={100} />
       </div>
     );
   }
