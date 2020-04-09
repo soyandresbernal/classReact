@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
+import cars from './data/cars.json';
 
-
-class App extends Component {
+class CarItem extends Component {
   render() {
-    const numbers = [1, 1, 3, 4, 5]
+    const { car, id } = this.props
     return (
-      <div>
-        <h4>List</h4>
-        {numbers.map((number, index) => {
-          return <p key={index}>I'm number {number}</p>
-        })}
-      </div>
+      <li>
+        <p>Key:{id}</p>
+        <p>{car.name}</p>
+        <p>{car.company}y</p>
+      </li>
     );
   }
 }
-export default App
+
+
+export default class CarsList extends Component {
+  render() {
+    return (
+      <li>
+        {
+          cars.map(car => {
+            return <CarItem
+              id={car.id}
+              key={car.id}
+              car={car}
+            />
+          })
+        }
+      </li>
+    );
+  }
+}
