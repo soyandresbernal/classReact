@@ -12,15 +12,22 @@ class Fetch extends Component {
         this.setState({ bpi });
       });
   }
+
   _renderCurrencies() {
     const { bpi } = this.state;
-    return Object.keys(bpi);
+    const currencies = Object.keys(bpi);
+    return currencies.map((currency) => (
+      <div key={currency}>
+        1 BTC is {bpi[currency].rate}
+        <span>{currency}</span>
+      </div>
+    ));
   }
 
   render() {
     return (
       <div>
-        <h4>Fetch Example</h4>
+        <h4>::Vitcoin Price Index::</h4>
         {this._renderCurrencies}
       </div>
     );
